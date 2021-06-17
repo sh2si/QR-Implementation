@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.rtl.min.css"
+            integrity="sha384-LPvXVVAlyPoBSGkX8UddpctDks+1P4HG8MhT7/YwqHtJ40bstjzCqjj+VVVDhsCo"
+            crossorigin="anonymous"
+        />
+        <style>
+            [class*="col"] {
+                padding: 1rem;
+                background-color: lightseagreen;
+                border-left: 4px solid white;
+                color: white;
+                box-shadow: 1px 1px 2px black;
+            }
+        </style>
+        <title>QR Implemetation</title>
+    </head>
+    <body>
+        <div class="container-lg">
+            <div class="row m-2">
+                <div class="h3 alert alert-warning">
+                    حالت اول: <span class="badge bg-secondary">کدهای ثابت</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm g-1">
+                    <div class="card-header h5">مدل استاندارد</div>
+                    <div class="card-body">
+                        <div class="card-title h6">ورود به صفحه پرداخت</div>
+                        <p class="card-text">
+                            کافیست لینک پرداخت، مستقیماً یا پشت دکمه HTML قرار
+                            گیرد...
+                        </p>
+                        <a
+                            href="https://qr.top.ir/?qrcode=1115162111"
+                            class="btn btn-primary"
+                            >با تاپ پرداخت کنید!</a
+                        >
+                    </div>
+                </div>
+                <div class="col-sm g-1">
+                    <div class="card-header h5">دکمه پرداخت</div>
+                    <div class="card-body">
+                        <div class="card-title h6">پرداخت مبالغ ثابت</div>
+                        <p class="card-text">
+                            می‌توان مبالغ ثابت را همراه با لینک پرداخت به درگاه
+                            استیکر ارسال نمود.
+                        </p>
+                        <a
+                            href="https://qr.top.ir/?qrcode=1115162111&Amount=50000"
+                            class="btn btn-warning"
+                            >5000 تومان</a
+                        >
+                    </div>
+                </div>
+                <div class="col-md g-1">
+                    <div class="card-header h5">کد پرداز</div>
+                    <div class="card-body">
+                        <div class="card-title h6">استفاده از QR</div>
+                        <img
+                            src="resources/qr5000.png"
+                            class="card-img-top"
+                            alt="QR-5000T"
+                        />
+                        <p class="card-text">
+                            می‌توان مبالغ ثابت را به شکل QR به درگاه استیکر
+                            ارسال نمود.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md g-1">
+                    <div class="card-header h5">تصویر</div>
+                    <div class="card-body">
+                        <div class="card-title h6">تصاویر لینک شده</div>
+                        <a
+                            href="https://qr.top.ir/?qrcode=1115162111&Amount=50000"
+                            ><img
+                                src="resources/geld.gif"
+                                class="card-img-top"
+                                alt="QR-5000T"
+                        /></a>
+                        <p class="card-text">
+                            به راحتی قیمت ها را به تصاویر مرتبط کنید.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="h3 alert alert-warning">
+                    حالت دوم: <span class="badge bg-secondary">کدهای پویا</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 g-1">
+                    <div class="card-header h5">تولید لینک</div>
+                    <div class="card-body">
+                        <div class="card-title h6">
+                            تولید لینک پرداخت از روی مبلغ
+                        </div>
+                        <p class="card-text">
+                            با ورود مبلغ مورد نظر و افزودن آن به لینک درگاه، این
+                            کار میسر می‌گردد.
+                        </p>
+                    </div>
+                    <label for="price" class="form-label">قیمت: </label>
+                    <input
+                        type="text"
+                        name="price"
+                        id="price_field"
+                        value="0"
+                        class="form-control"
+                    />
+                    <button onclick="codePardaz()" class="btn btn-success">
+                        پرداخت با تاپ
+                    </button>
+                </div>
+                <div class="col-md-4 g-1">
+                    <div class="card-header h5">تولید QR</div>
+                    <div class="card-body">
+                        <div class="card-title h6">
+                            ایجاد QR جدید برای مبالغ جدید
+                        </div>
+                        <p class="card-text">
+                            امکان تولید QR از روی لینک و مبلغ درج شده نیز وجود
+                            دارد.
+                        </p>
+                    </div>
+                    <label for="price" class="form-label float-start"
+                        >قیمت:
+                    </label>
+                    <input
+                        type="text"
+                        name="price"
+                        id="price_qr"
+                        value="0"
+                        class="form-control"
+                    />
+                    <button
+                        onclick="qrMaker()"
+                        class="btn btn-danger float-start"
+                    >
+                        اسکن با کدپرداز تاپ
+                    </button>
+                </div>
+                <div class="col-md-4 g-1">
+                    <div class="card text-center">
+                        <div class="card-header text-secondary">تولید QR</div>
+                        <div class="card-body">
+                            <div class="card-title text-primary h5">
+                                QR تولید شده از روی مبالغ درج شده
+                            </div>
+                            <div class="card text-danger" id="placeHolder">
+                                هنوز کدی تولید نشده است
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"
+        ></script>
+        <script src="resources/qrcode.js"></script>
+        <script>
+            var slink = "https://qr.top.ir/?qrcode=1115162111&Amount=";
+            function codePardaz() {
+                var val = document.getElementById("price_field").value;
+                var toplink = slink.concat(val.toString());
+                window.open(toplink, "_blank");
+            }
+            function qrMaker() {
+                var val = document.getElementById("price_qr").value;
+                var toplink = slink.concat(val.toString());
+                var typeNumber = 10;
+                var errorCorrectionLevel = "H";
+                var qr = qrcode(typeNumber, errorCorrectionLevel);
+                console.log(val);
+                console.log(slink);
+                console.log(toplink);
+                console.log(typeNumber);
+                qr.addData(toplink, "Byte");
+                qr.make();
+                var qrgr = qr.createImgTag(10);
+                var qrcd = qrgr.replace('width="650" height="650"', "");
+                console.log(qrcd);
+                document.getElementById("placeHolder").innerHTML = qrcd;
+            }
+        </script>
+    </body>
+</html>
