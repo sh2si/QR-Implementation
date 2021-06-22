@@ -21,25 +21,153 @@
       crossorigin="anonymous"
     />
     <style>
-      [class*="col"] {
+      @font-face {
+        font-family: yekan;
+        src: url("fonts/Yekan.eot");
+        src: url("fonts/Yekan.eot?#iefix") format("embedded-opentype"),
+          url("fonts/Yekan.woff") format("woff"),
+          url("fonts/Yekan.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+      body {
+        font-family: "yekan";
+      }
+      /* [class*="col"] { */
+      .bodycards {
         padding: 1rem;
         background-color: lightseagreen;
         border-left: 4px solid white;
         color: white;
         box-shadow: 1px 1px 2px black;
       }
+      #placeHolder {
+        width: auto;
+      }
     </style>
     <title>QR | IPG Utilization</title>
   </head>
   <body>
     <div class="container-lg">
+      <div class="row m-2 mt-5">
+        <div class="h3 alert alert-info text-center">
+          خدمات نوین بانکی یا Modern Banking Services
+        </div>
+      </div>
+      <div class="row m-2">
+        <div class="col-lg-12">
+          <h3></h3>
+          <p>
+            به طور کلی یکی از اهداف اصلی خدمات پرداخت نوین، کاهش نیاز به
+            پرداخت‌های فیزیکی (وجه نقد، کارت، چک و غیره) می‌باشد.
+          </p>
+          <p>
+            کد پرداز، یکی از انواع این خدمات است که در آن مجموعه‌ای از اطلاعات
+            لازم مانند مشخصات دریافت کننده (شماره حساب، کارت، شبا، کد ملی، شماره
+            تلفن همراه و غیره)، اطلاعات درگاه و شیوه پرداخت، مبلغ، شناسه فرستنده
+            و خیلی موضوعات دیگر به شکل رشته کد در آمده و منتقل می شود.
+          </p>
+          <p>اما روشهای مختلفی برای این انتقال وجود دارد.</p>
+        </div>
+        <div class="col-lg-4">
+          <div class="card text-dark bg-light">
+            <div class="card-body">
+              <h5 class="card-title">RFID</h5>
+              <p class="card-text">
+                در RFID یا Radio Frequency Identification کد فوق در یک IC ذخیره
+                و با نزدیک شدن دستگاه قرائت کننده، به آن منتقل می‌گردد.
+              </p>
+            </div>
+            <div class="card-body row">
+              <ul class="list-group list-group-flush col-sm">
+                <li class="list-group-item list-group-item-success">مزایا</li>
+                <li class="list-group-item">سرعت خوانده شدن بالا</li>
+                <li class="list-group-item">دقت و شفافیت</li>
+                <li class="list-group-item">سهولت بکار گیری</li>
+              </ul>
+              <ul class="list-group list-group-flush col-sm">
+                <li class="list-group-item list-group-item-danger">معایب</li>
+                <li class="list-group-item">
+                  هزینه تولید بالای تگ‌ها (نیاز به حافظه بیشتر برای کدهای بلندتر
+                  این معضل را پررنگ تر نیز می‌کند)
+                </li>
+                <li class="list-group-item">نیاز به تولید صنعتی</li>
+                <li class="list-group-item">انعطاف ناپذیر</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card text-dark bg-light">
+            <div class="card-body">
+              <h5 class="card-title">Direct</h5>
+              <p class="card-text">
+                ارسال مستقیم کد می تواند از طریق لینک وب، USSD، پیامک و یا حتی
+                تایپ مستقیم صورت گیرد.
+              </p>
+            </div>
+            <div class="card-body row">
+              <ul class="list-group list-group-flush col-sm">
+                <li class="list-group-item list-group-item-success">مزایا</li>
+                <li class="list-group-item">طول (تقریباً) نامحدود کد</li>
+                <li class="list-group-item">انعطاف پذیری بالا و بسیار آسان</li>
+                <li class="list-group-item">ارزان و همیشه در دسترس</li>
+              </ul>
+              <ul class="list-group list-group-flush col-sm">
+                <li class="list-group-item list-group-item-danger">معایب</li>
+                <li class="list-group-item">
+                  سرعت درج و پاسخ گیری بسیار پایین
+                </li>
+                <li class="list-group-item">دقت کم و احتمال بروز اشتباه</li>
+                <li class="list-group-item">بسیار ناامن</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card text-dark bg-light">
+            <div class="card-body">
+              <h5 class="card-title">QRCODE</h5>
+              <p class="card-text">
+                استفاده از BARCODE (کدهای میله ای شکل یا خطی) و QRCODE (کدهای
+                پاسخ سریع، دوبعدی یا مربعی) راهکاری است که با عمومی شدن استفاده
+                از گوشی های هوشنمد و دوربین دار به عنوان قرائت کننده، بسیار مورد
+                توجه واقع شده است.
+              </p>
+            </div>
+            <div class="card-body row">
+              <ul class="list-group list-group-flush col-sm">
+                <li class="list-group-item list-group-item-success">مزایا</li>
+                <li class="list-group-item">
+                  تولید ارزان و راحت (طول کد نیز تاثیری بر هزینه تولید ندارد)
+                </li>
+                <li class="list-group-item">
+                  قابل تبدیل به سایر روش های کدپردازی
+                </li>
+                <li class="list-group-item">دقت بالا</li>
+                <li class="list-group-item">به نوعی انعطاف پذیر</li>
+                <li class="list-group-item">استهلاک پایین</li>
+              </ul>
+              <ul class="list-group list-group-flush col-sm">
+                <li class="list-group-item list-group-item-danger">معایب</li>
+                <li class="list-group-item">قرائت مشکل</li>
+                <li class="list-group-item">مخدوش شدنی (در شرایط خاص)</li>
+                <li class="list-group-item">
+                  محدودیت طول کد (البته ظرفیت فعلی برای هدف تعیین شده کافی به
+                  نظر می رسد.)
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="row m-2">
         <div class="h3 alert alert-warning">
           حالت اول: <span class="badge bg-secondary">کدهای ثابت</span>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm g-1">
+        <div class="col-sm g-1 bodycards">
           <div class="card-header h5">مدل استاندارد</div>
           <div class="card-body">
             <div class="card-title h6">ورود به صفحه پرداخت</div>
@@ -53,7 +181,7 @@
             >
           </div>
         </div>
-        <div class="col-sm g-1">
+        <div class="col-sm g-1 bodycards">
           <div class="card-header h5">دکمه پرداخت</div>
           <div class="card-body">
             <div class="card-title h6">پرداخت مبالغ ثابت</div>
@@ -68,7 +196,7 @@
             >
           </div>
         </div>
-        <div class="col-md g-1">
+        <div class="col-md g-1 bodycards">
           <div class="card-header h5">کد پرداز</div>
           <div class="card-body">
             <div class="card-title h6">استفاده از QR</div>
@@ -82,7 +210,7 @@
             </p>
           </div>
         </div>
-        <div class="col-md g-1">
+        <div class="col-md g-1 bodycards">
           <div class="card-header h5">تصویر</div>
           <div class="card-body">
             <div class="card-title h6">تصاویر لینک شده</div>
@@ -102,7 +230,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4 g-1">
+        <div class="col-md-6 g-1 bodycards">
           <div class="card-header h5">تولید لینک</div>
           <div class="card-body">
             <div class="card-title h6">تولید لینک پرداخت از روی مبلغ</div>
@@ -123,7 +251,7 @@
             پرداخت با تاپ
           </button>
         </div>
-        <div class="col-md-4 g-1">
+        <div class="col-md-6 g-1 bodycards">
           <div class="card-header h5">تولید QR</div>
           <div class="card-body">
             <div class="card-title h6">ایجاد QR جدید برای مبالغ جدید</div>
@@ -139,22 +267,40 @@
             value="0"
             class="form-control"
           />
-          <button onclick="qrMaker()" class="btn btn-danger float-start">
+          <button
+            onclick="qrMaker()"
+            class="btn btn-danger float-start"
+            data-bs-toggle="modal"
+            data-bs-target="#QRModal"
+          >
             اسکن با کدپرداز تاپ
           </button>
         </div>
-        <div class="col-md-4 g-1">
-          <div class="card text-center">
-            <div class="card-header text-secondary">تولید QR</div>
-            <div class="card-body">
-              <div class="card-title text-primary h5">
-                QR تولید شده از روی مبالغ درج شده
+        <div
+          class="modal fade"
+          id="QRModal"
+          tabindex="-1"
+          aria-labelledby="QRModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="QRModalLabel">تولید QR</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
               </div>
-              <div class="card text-danger" id="placeHolder">
-                هنوز کدی تولید نشده است
+              <div class="modal-body">
+                <div class="card" id="placeHolder">هنوز کدی تولید نشده است</div>
+              </div>
+              <div class="modal-footer text-danger text-center">
+                با اپلیکیشن تاپ پرداخت کنید
               </div>
             </div>
-            <div class="card-footer text-muted"></div>
           </div>
         </div>
       </div>
